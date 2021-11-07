@@ -9,14 +9,14 @@ module.exports = function (in_chunk, direction = 0) {
     let letter = in_chunk.substr(index - 1, 1);
     place = PLAIN.indexOf(letter.toUpperCase());
     if (place == -1) {
-      //any  other simbols in input chunk
+      //any  other symbols in input chunk
       out_chunk += letter;
     } else newPlace = place + n;
-    //if input is upper case
+    //if input is in upper case
     if (letter === letter.toUpperCase()) {
       out_chunk += PLAIN.substr(newPlace, 1);
     } else {
-      //ifinputis lower case
+      //if input is in lower case
       out_chunk += PLAIN.substr(newPlace, 1).toLowerCase();
     }
   }

@@ -8,7 +8,7 @@ const ERR = require('./errors/errors.json');
 const { stdout, stderr } = require('process');
 const Validator = require('./validate/validator')
 
-
+// get array of arguments
 let arguments = process.argv.splice(2);
 
 const validatorConfig = new Validator("-c", "--config", true);
