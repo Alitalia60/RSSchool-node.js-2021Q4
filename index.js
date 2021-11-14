@@ -4,7 +4,8 @@ const { access, constants } = require('fs');
 
 const stream = require("stream");
 
-const argValidator = require("./validators/argValidator");
+// const argValidator = require("./validators/argValidator");
+const { checkArgs, getNexArg } = require("./validators/argChecker");
 const commandsValidate = require("./validators/commandsValidate");
 const {
   argumentsError,
@@ -23,84 +24,44 @@ let encoding = true;
 
 pack_json = require("./package.json");
 
-console.log(`\n***  ${pack_json.name} ver.${pack_json.version} ver.${pack_json.date}  ***\n`);
+console.log(`\n***  ${pack_json.name} ver.${pack_json.version} ver.${pack_json.date}  ***`);
 
+// =================================1. parsing command line + args
+checkArgs(args, "-c", "--config", true);
+checkArgs(args, "-i", "--input");
+checkArgs(args, "-o", "--output");
 
-// =====================================================1. parsing command line + args
-
-//TODO common checker for garbage
-//e.g.  -c A0-R-C1 -i Text.txt -- -r -t -o Out_text.txt -- -r -t sd/flsa -rte
-
-//==============================================
-// check '-c', '--config' args;
-const configValidator = new argValidator("-c", "--config", args, true);
-if (configValidator.isValid() == false) {
-  throw new argumentsError("Wrong argument(s)", "Arguments");
-} else {
-  commands = configValidator.getNextArg();
-  if (commands == undefined) {
-    throw new argumentsError(
-      'No commands specified after option "-c" or "--config" was founded'
-    );
-  }
+if (args.length > 0) {
+  throw new argumentsError(`Too much or unknown argument(s) ${args}`);
 }
+commands = getNexArg(process.argv.slice(2), "-c", "--config", true);
 
 //parse and validate array arrCommands after option -c or --config
 let arrCommands = commands.split("-");
 if (!commandsValidate(arrCommands)) {
   throw new commandsError(
-    `Error in the queue of commands after option "-c" or "--config":  "${arrCommands}"`
+    `Wrong command(s): <${arrCommands}>? after option "-c" or "--config". \n Allowed are: "A", "C0", "C1", "R0", "R1"`
   );
 }
 
-//==============================================
-// check '-i', '--input' args, if specified;
-const inputValidator = new argValidator("-i", "--input", args);
-let result = inputValidator.isValid();
-
-if (result == null) {
-  // stdin
-  source = null;
-} else {
-  //check specified file after
-  source = inputValidator.getNextArg();
-  if (source == undefined) {
-    throw new argumentsError(
-      'Wrong or is absent argument after "-i" or "--input". File name expected'
-    );
-  } else {
-    try {
-      fs.accessSync(source, constants.R_OK);
-    } catch (error) {
-      throw new fileError(`no such file "${source}" or access permission denied.`);
-    }
+source = getNexArg(process.argv.slice(2), "-i", "--input");
+if (source != null) {
+  try {
+    fs.accessSync(source, constants.R_OK);
+  } catch (error) {
+    throw new fileError(`no such file "${source}" or access permission denied.`);
   }
 }
-
-//==============================================
-// check '-o', '--output' args, if specified;
-const outputValidator = new argValidator("-o", "--output", args);
-result = outputValidator.isValid();
-if (result == null) {
-  // stdin
-  target = null;
-} else {
-  target = outputValidator.getNextArg();
-  if (target == undefined) {
-    throw new argumentsError(
-      'Wrong or is absent argument after "-o" or "--output". File name expected'
-    );
-  } else {
-    try {
-      fs.accessSync(target, constants.W_OK);
-    } catch (error) {
-      throw new fileError(`no such file "${target}" or access permission denied.`);
-    }
+target = getNexArg(process.argv.slice(2), "-o", "--output");
+if (target != null) {
+  try {
+    fs.accessSync(target, constants.W_OK);
+  } catch (error) {
+    throw new fileError(`no such file "${target}" or access permission denied.`);
   }
 }
 
 //========================================================
-// создание массива потоков на шифрование из массива команд
 
 const convertCasaer = require("./ciphers/cipherCasaer").convert;
 const convertAtbash = require("./ciphers/cipherAtbash").convert;
@@ -143,12 +104,12 @@ class ROT8Transform extends stream.Transform {
   }
 }
 
+// create array of ciphering stream 
 const arrCipherStream = [];
 arrCipherStream.push();
 arrCommands.forEach((item) => {
   switch (item.slice(0, 1)) {
     case "A": {
-      //   console.log(new AtbashTransform(item.slice(1)));
       arrCipherStream.push(new AtbashTransform());
       break;
     }
@@ -169,32 +130,46 @@ arrCommands.forEach((item) => {
 
 
 let rs = source == null ? process.stdin : fs.createReadStream(source, { "encoding": "utf-8" });
-let ws = target == null ? process.stdout : fs.createWriteStream(target, { "encoding": "utf-8" });
+
 
 if ((source != null) && (target != null) && (target == source)) {
-  // inputFile -> tmpFile -> outputFile
-  const tmpFileName = "./text.tmp";
-  // let tmp = target == null ? process.stdout : fs.createWriteStream(tmpFileName);
+
+  console.log('source =', source, '  target=', target);
+
+  const tmpFileName = "text.tmp";
   let tmp = fs.createWriteStream(tmpFileName);
   stream.pipeline(rs, ...arrCipherStream, tmp, (err) => {
     if (err) {
       throw new streamError(`Error streaming`);
     } else {
-      // console.log("Pipeline 1 succeeded.");
-      stream.pipeline(fs.createReadStream(tmpFileName), ...arrCipherStream, ws, (err) => {
+      console.log('streaming to tmp = OK');
+      // process.exit(0)
+      fs.copyFile(tmpFileName, source, (err) => {
         if (err) {
-          throw new streamError("Error streaming in text.tmp");
+          throw new streamError("Error copying in text.txt");
+        }
+        else {
+          console.log('copy from tmp = OK');
+          fs.rm(tmpFileName, (err) => {
+            if (err) {
+              throw new fileError(`Error deleting "${tmpFileName}"`);
+            }
+          });
+
         }
       });
     }
-  });
+
+
+  }
+  );
 }
+
 else {
-  console.log()
+  let ws = target == null ? process.stdout : fs.createWriteStream(target, { "encoding": "utf-8" });
   stream.pipeline(rs, ...arrCipherStream, ws, (err) => {
     if (err) {
-      throw new streamError("Error streaming");
-
+      throw new streamError(`Error streaming "${source}" -> "${target}"`);
     }
-  })
+  });
 }
