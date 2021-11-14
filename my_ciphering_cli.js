@@ -63,9 +63,10 @@ if (target != null) {
 
 //========================================================
 
-const convertCasaer = require("./ciphers/cipherCasaer").convert;
-const convertAtbash = require("./ciphers/cipherAtbash").convert;
-const convertROT8 = require("./ciphers/cipherRot8").convert;
+// const convertCasaer = require("./ciphers/cipherCasaer").convert;
+// const convertAtbash = require("./ciphers/cipherAtbash").convert;
+// const convertROT8 = require("./ciphers/cipherRot8").convert;
+ const convert = require("./ciphers/ciphers").convert;
 const { stdin, stdout } = require("process");
 
 //========================================создание классов шифрования
@@ -76,7 +77,7 @@ class AtbashTransform extends stream.Transform {
     this.encoding = encoding;
   }
   _transform(chunk, encoding, callback) {
-    this.push(convertAtbash(chunk.toString(), this.encoding));
+    this.push(convert(chunk.toString(), "A", this.encoding));
     callback();
   }
 }
@@ -87,7 +88,7 @@ class CaesarTransform extends stream.Transform {
     this.toEncrypt = toEncrypt;
   }
   _transform(chunk, encoding, callback) {
-    this.push(convertCasaer(chunk.toString(), this.toEncrypt));
+    this.push(convert(chunk.toString(), "C", this.toEncrypt));
     callback();
   }
 }
@@ -99,7 +100,7 @@ class ROT8Transform extends stream.Transform {
   }
   _transform(chunk, encoding, callback) {
 
-    this.push(convertROT8(chunk.toString(), this.toEncrypt));
+    this.push(convert(chunk.toString(), "R", this.toEncrypt));
     callback();
   }
 }
@@ -167,9 +168,15 @@ if ((source != null) && (target != null) && (target == source)) {
 
 else {
   let ws = target == null ? process.stdout : fs.createWriteStream(target, { "encoding": "utf-8" });
+  ws.on('finish', () => {
+    console.log('All writes are now complete.');
+  });
+
   stream.pipeline(rs, ...arrCipherStream, ws, (err) => {
     if (err) {
       throw new streamError(`Error streaming "${source}" -> "${target}"`);
     }
   });
 }
+
+console.log('')
