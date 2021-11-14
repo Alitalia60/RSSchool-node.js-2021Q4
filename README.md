@@ -1,5 +1,6 @@
 # node.js-ciphering-cli-tool
 https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/ciphering-cli-tool.md
+
 14-11-2021
 deadline 14-11-2021
 programm to encripting / decrypting text using Abash, Caesar or ROT-8 method
