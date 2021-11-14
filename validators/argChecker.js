@@ -1,3 +1,9 @@
+// module argChecker
+/*
+    validate if correct arguments -c(--config), -i(--input), -o(--output)
+*/
+
+
 const { argumentsError } = require("../errors/myError");
 
 // function checkArgs(arrArgs, optAlias, optFull, nextArgument, isRequired = false) {
@@ -31,10 +37,12 @@ module.exports.checkArgs = function (arrArgs, optAlias, optFull, isRequired = fa
                 return false
             }
             else {
-                let el_to_remove1 = arrArgs[indexOfNextArg - 1];
-                let el_to_remove2 = arrArgs[indexOfNextArg];
-                arrArgs.splice(arrArgs.indexOf(el_to_remove1), 1);
-                arrArgs.splice(arrArgs.indexOf(el_to_remove2), 1);
+                // let el_to_remove1 = arrArgs[indexOfNextArg - 1];
+                // let el_to_remove2 = arrArgs[indexOfNextArg];
+                // arrArgs.splice(arrArgs.indexOf(el_to_remove1), 1);
+                // arrArgs.splice(arrArgs.indexOf(el_to_remove2), 1);
+                arrArgs.splice(indexOfNextArg - 1, 2);
+
                 return true;
             }
         }

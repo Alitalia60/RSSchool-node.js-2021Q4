@@ -1,3 +1,12 @@
+//module fileValidators.js
+/*
+  test existing & accessing "inputFileName"
+  typeOfAccess = type of accessing file: 
+            to read =constants.R_OK
+            to write =constants.W_OK
+            ... etc.
+*/
+
 const { access, constants } = require('fs');
 const { fileError } = require('../errors/myError');
 

@@ -1,7 +1,7 @@
-Opef.kt jt bo pqfo-tpvsdf, dsptt-qmbugpsn, KbwbTdsjqu svoujnf fowjsponfou uibu fyfdvuft KbwbTdsjqu dpef pvutjef pg b xfc cspxtfs.
-Opef.kt jt b qpqvmbs, mjhiuxfjhiu xfc gsbnfxpsl gps cfhjoofst, boe ju jt vtfe cz nboz cjh dpnqbojft mjlf Ofugmjy boe Vcfs.
-Xifo xf uzqjdbmmz uijol pg KbwbTdsjqu, pvs njoe ufoet up hp up xfc efwfmpqnfou. Voujm Opef.kt dbnf bmpoh, uifsf xbt sfbmmz op
-xbz up svo KbwbTdsjqu pvutjef pg b cspxtfs. Xifo xf xsjuf b cbdlfoe tfswfs boe ebubcbtf, Opef.kt jt b qpqvmbs dipjdf cfdbvtf xf
-dbo svo pvs dpef bt b tuboebmpof bqqmjdbujpo sbuifs uibo tpnfuijoh uibu dbo pomz cf fwbmvbufe jo b cspxtfs fowjsponfou.
-Opef.kt jt bo jnqpsubou uppm gps boz KbwbTdsjqu efwfmpqfs up voefstuboe. Tp, upebz, xf’mm jouspevdf zpv up Opef.kt boe 
-tipx zpv ipx up hfu tubsufe xjui b qspkfdu.
+Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser.
+Node.js is a popular, lightweight web framework for beginners, and it is used by many big companies like Netflix and Uber.
+When we typically think of JavaScript, our mind tends to go to web development. Until Node.js came along, there was really no
+way to run JavaScript outside of a browser. When we write a backend server and database, Node.js is a popular choice because we
+can run our code as a standalone application rather than something that can only be evaluated in a browser environment.
+Node.js is an important tool for any JavaScript developer to understand. So, today, we’ll introduce you to Node.js and 
+show you how to get started with a project.
