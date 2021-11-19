@@ -1,15 +1,17 @@
 {
     "name": "ciphering",
-    "version": "1.0.0",
-    "date": "13.11.2021",
+    "version": "2.0.0",
+    "date": "16.11.2021",
     "description": "Rsschool, Node.js, task 1 (my_ciphering_cli_tool)",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest",
+        "test:coverage": "jest --coverage"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "eslint": "^8.1.0"
+        "eslint": "^8.1.0",
+        "jest": "^27.3.1"
     }
 }
