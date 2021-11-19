@@ -1,4 +1,4 @@
-const ciphers = require("../ciphers/ciphers").convert;
+const ciphers = require("../lib/ciphers/ciphers").convert;
 const encrypt = true;
 const decrypt = false;
 

@@ -1,5 +1,5 @@
-const { commandsError } = require("../errors/myError");
-const cmdCheck = require("../validators/cmdCheck");
+const { commandsError } = require("../lib/errors/myError");
+const cmdCheck = require("../lib/validators/cmdCheck");
 
 const badCommands =[["A1-R-C0"],
 ["C2"],

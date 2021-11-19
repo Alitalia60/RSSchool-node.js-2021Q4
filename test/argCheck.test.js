@@ -1,5 +1,5 @@
-const { argumentsError, commandsError } = require("../errors/myError");
-const { checkArgs, getNextArg } = require("../validators/argCheck")
+const { argumentsError, commandsError } = require("../lib/errors/myError");
+const { checkArgs, getNextArg } = require("../lib/validators/argCheck")
 
 describe("Test on correct arguments", () => {
 

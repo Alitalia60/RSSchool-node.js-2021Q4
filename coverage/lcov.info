@@ -1,5 +1,5 @@
 TN:
-SF:ciphers\ciphers.js
+SF:lib\ciphers\ciphers.js
 FN:8,(anonymous_0)
 FN:43,(anonymous_1)
 FNF:2
@@ -48,7 +48,7 @@ BRF:15
 BRH:15
 end_of_record
 TN:
-SF:errors\myError.js
+SF:lib\errors\myError.js
 FN:9,(anonymous_0)
 FN:17,(anonymous_1)
 FN:25,(anonymous_2)
@@ -78,7 +78,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:validators\argCheck.js
+SF:lib\validators\argCheck.js
 FN:8,checkArgs
 FN:14,(anonymous_1)
 FN:15,(anonymous_2)
@@ -141,7 +141,7 @@ BRF:22
 BRH:21
 end_of_record
 TN:
-SF:validators\cmdCheck.js
+SF:lib\validators\cmdCheck.js
 FN:11,cmdCheck
 FN:14,(anonymous_1)
 FNF:2
@@ -163,7 +163,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:validators\fileCheck.js
+SF:lib\validators\fileCheck.js
 FN:15,isAccessible
 FNF:1
 FNH:1

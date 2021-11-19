@@ -1,4 +1,4 @@
-const isAccessible = require("../validators/fileCheck");
+const isAccessible = require("../lib/validators/fileCheck");
 const fs = require('fs');
 const path = require('path');
 const { Console } = require("console");
