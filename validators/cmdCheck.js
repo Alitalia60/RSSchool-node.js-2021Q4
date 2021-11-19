@@ -14,10 +14,8 @@ function cmdCheck(cmd) {
   cmd.split("-").forEach((item) => {
     if (!allowedCommands.includes(item)) {
       throw new commandsError(`Wrong command ${item}. Try ${allowedCommands}\n`)
-      result = false;
     }
   });
-  return result;
 };
 
 module.exports = cmdCheck;

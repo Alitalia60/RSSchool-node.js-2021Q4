@@ -15,11 +15,9 @@ function checkArgs(arrArgs) {
         let countOption = arrArgs.filter(arg => arg == item[0] || arg == item[1]).length;
         if (countOption == 0 && item[2]) {
             throw new argumentsError(` argument ${item.slice(0, 2)} is not found\n`);
-            return false
         }
         if (countOption > 1) {
             throw new argumentsError(` arguments ${item.slice(0, 2)} are duplicated\n`);
-            return false
         }
     });
     return true
