@@ -18,10 +18,6 @@ module.exports.convert = function (in_data, cipher, toEncypt = true) {
     case "R":
       shift = toEncypt ? 8 : -8; //shift
       break;
-
-    default:
-      //Atbash
-      break;
   }
 
   let out_data = "";

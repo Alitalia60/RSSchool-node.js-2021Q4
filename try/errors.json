@@ -1,7 +1,0 @@
-{
-    "1": "arguments error ",
-    "2": "missing or wrong argument -c [--config]",
-    "3": "arguments duplicate -c [--config] or  -i [--input] or -o [--output]",
-    "4": "wrong or absent command, allowed: A, C0, C1, R0, R1",
-    "5": "input file not found"
-}
