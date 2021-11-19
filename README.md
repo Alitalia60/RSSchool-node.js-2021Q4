@@ -24,4 +24,24 @@ Y: 0 = to encrypt; 1 = to decrypt
 ****************************************************
 All other arguments call Error message and close programm
 
+results of testing 19-11-21
+
+---------------|---------|----------|---------|---------|-------------------
+File           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+---------------|---------|----------|---------|---------|-------------------
+All files      |   91.13 |     87.5 |    92.3 |    90.9 |                  
+ ciphers       |     100 |    86.66 |     100 |     100 |                  
+  ciphers.js   |     100 |    86.66 |     100 |     100 | 16-19            
+ errors        |   76.92 |      100 |      75 |   76.92 |                  
+  myError.js   |   76.92 |      100 |      75 |   76.92 | 34-36            
+ validators    |    90.9 |       88 |     100 |   90.69 |                  
+  argCheck.js  |   88.88 |     90.9 |     100 |   88.46 | 18,22,36         
+  cmdCheck.js  |   88.88 |      100 |     100 |   88.88 | 17               
+  fileCheck.js |     100 |        0 |     100 |     100 | 15               
+---------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 4 passed, 4 total
+Tests:       47 passed, 47 total
+Snapshots:   0 total
+
 
