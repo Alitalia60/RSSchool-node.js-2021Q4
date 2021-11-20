@@ -2,19 +2,13 @@
 const { checkArgs, getNextArg } = require("./lib/validators/argCheck");
 const cmdCheck = require("./lib/validators/cmdCheck");
 const isAccessible = require("./lib/validators/fileCheck");
+const { createQueueOfCiphering } = require("./lib/streams/queueStreams")
 const fs = require("fs");
-const convert = require("./lib/ciphers/ciphers").convert;
 const stream = require("stream");
-
-const {
-  argumentsError,
-  commandsError,
-  fileError,
-  streamError,
-} = require("./lib/errors/myError");
-const { createQueueOfCiphering } = require("./lib/streams/streams")
+const { fileError, streamError} = require("./lib/errors/myError");
 
 pack_json = require("./package.json");
+
 console.clear();
 console.log(`\n***  ${pack_json.name} ver.${pack_json.version} ${pack_json.date}  ***`);
 
@@ -56,8 +50,6 @@ if (target) {
 arrCipherStream = createQueueOfCiphering(commands);
 
 let rs = source == undefined ? process.stdin : fs.createReadStream(source, { "encoding": "utf-8" });
-
-
 let ws = target == undefined ? process.stdout : fs.createWriteStream(target, { "flags":"a+" }, { "encoding": "utf-8" });
 
 stream.pipeline(rs, ...arrCipherStream, ws, (err) => {

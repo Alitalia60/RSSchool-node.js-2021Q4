@@ -1,4 +1,4 @@
-const ciphers = require("../lib/ciphers/ciphers").convert;
+const ciphers = require("../lib/ciphers/ciphers");
 const encrypt = true;
 const decrypt = false;
 
@@ -11,8 +11,8 @@ describe('Test english example', () => {
         ['R', decrypt, 'Lzak ak kwujwl. Ewkksyw stgml "_" kqetgd!'],
         ['A', encrypt,'Gsrh rh hvxivg. Nvhhztv zylfg "_" hbnylo!'],
     ];
-    test.each(dataEnglish)('should ', (cipher, toEncrypt ,answer) => {
-        expect(ciphers(exampleEnglish, cipher, toEncrypt)).toEqual(answer)
+    test.each(dataEnglish)('should ', (cipher, action ,answer) => {
+        expect(ciphers(exampleEnglish, cipher, action)).toEqual(answer)
 
     });
 });
