@@ -1,9 +1,9 @@
 
-const { checkArgs, getNextArg } = require("./validators/argCheck");
-const cmdCheck = require("./validators/cmdCheck");
-const isAccessible = require("./validators/fileCheck");
+const { checkArgs, getNextArg } = require("./lib/validators/argCheck");
+const cmdCheck = require("./lib/validators/cmdCheck");
+const isAccessible = require("./lib/validators/fileCheck");
 const fs = require("fs");
-const convert = require("./ciphers/ciphers").convert;
+const convert = require("./lib/ciphers/ciphers").convert;
 const stream = require("stream");
 
 const {
@@ -11,8 +11,8 @@ const {
   commandsError,
   fileError,
   streamError,
-} = require("./errors/myError");
-const { createQueueOfCiphering } = require("./streams/streams")
+} = require("./lib/errors/myError");
+const { createQueueOfCiphering } = require("./lib/streams/streams")
 
 pack_json = require("./package.json");
 console.clear();
