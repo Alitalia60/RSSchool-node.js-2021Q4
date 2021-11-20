@@ -24,3 +24,15 @@ Y: 0 = to encrypt; 1 = to decrypt
 ****************************************************
 All other arguments call Error message and close programm
 
+20-11-20201 
+node.js-jest-my-ciphering-cli 
+https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/testing.md
+
+20-11-2021 
+deadline 21-11-2021
+add 5 tests
+ test/argCheck.test.js
+ PASS  test/ciphers.test.js
+ PASS  test/queueStreams.test.js
+ PASS  test/cmdCheck.test.js
+ PASS  test/fileCheck.test.js
