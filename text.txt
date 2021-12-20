@@ -1,7 +1,1 @@
-Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser.
-Node.js is a popular, lightweight web framework for beginners, and it is used by many big companies like Netflix and Uber.
-When we typically think of JavaScript, our mind tends to go to web development. Until Node.js came along, there was really no
-way to run JavaScript outside of a browser. When we write a backend server and database, Node.js is a popular choice because we
-can run our code as a standalone application rather than something that can only be evaluated in a browser environment.
-Node.js is an important tool for any JavaScript developer to understand. So, today, we’ll introduce you to Node.js and 
-show you how to get started with a project.
+This is secret. Message about "_" symbol!

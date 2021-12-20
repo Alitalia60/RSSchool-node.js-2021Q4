@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1637435721813" clover="3.2.0">
+  <project timestamp="1637435721813" name="All files">
+    <metrics statements="102" coveredstatements="88" conditionals="47" coveredconditionals="44" methods="21" coveredmethods="14" elements="170" coveredelements="146" complexity="0" loc="102" ncloc="102" packages="4" files="7" classes="7"/>
+    <package name="ciphers">
+      <metrics statements="21" coveredstatements="21" conditionals="15" coveredconditionals="15" methods="2" coveredmethods="2"/>
+      <file name="ciphers.js" path="E:\RSSchool-node.js-2021Q4\Node.js-my_ciphering_cli\lib\ciphers\ciphers.js">
+        <metrics statements="21" coveredstatements="21" conditionals="15" coveredconditionals="15" methods="2" coveredmethods="2"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="14" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="19" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="26" count="301" type="stmt"/>
+        <line num="27" count="301" type="stmt"/>
+        <line num="29" count="301" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="151" type="stmt"/>
+        <line num="32" count="150" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="140" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="8" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="44" count="150" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="errors">
+      <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <file name="myError.js" path="E:\RSSchool-node.js-2021Q4\Node.js-my_ciphering_cli\lib\errors\myError.js">
+        <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="streams">
+      <metrics statements="29" coveredstatements="18" conditionals="7" coveredconditionals="6" methods="8" coveredmethods="2"/>
+      <file name="queueStreams.js" path="E:\RSSchool-node.js-2021Q4\Node.js-my_ciphering_cli\lib\streams\queueStreams.js">
+        <metrics statements="15" coveredstatements="15" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="22" type="cond" truecount="3" falsecount="0"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="14" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="19" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="21" count="9" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+      </file>
+      <file name="streamClasses.js" path="E:\RSSchool-node.js-2021Q4\Node.js-my_ciphering_cli\lib\streams\streamClasses.js">
+        <metrics statements="14" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="validators">
+      <metrics statements="39" coveredstatements="39" conditionals="25" coveredconditionals="23" methods="7" coveredmethods="7"/>
+      <file name="argCheck.js" path="E:\RSSchool-node.js-2021Q4\Node.js-my_ciphering_cli\lib\validators\argCheck.js">
+        <metrics statements="24" coveredstatements="24" conditionals="22" coveredconditionals="21" methods="4" coveredmethods="4"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="14" type="stmt"/>
+        <line num="14" count="14" type="stmt"/>
+        <line num="15" count="141" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="31" type="cond" truecount="4" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="27" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="9" type="stmt"/>
+        <line num="29" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="39" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="46" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="3" type="stmt"/>
+        <line num="48" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+      </file>
+      <file name="cmdCheck.js" path="E:\RSSchool-node.js-2021Q4\Node.js-my_ciphering_cli\lib\validators\cmdCheck.js">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="14" count="11" type="stmt"/>
+        <line num="15" count="27" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+      <file name="fileCheck.js" path="E:\RSSchool-node.js-2021Q4\Node.js-my_ciphering_cli\lib\validators\fileCheck.js">
+        <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
