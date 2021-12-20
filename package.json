@@ -1,7 +1,8 @@
 {
     "name": "ciphering",
     "version": "1.0.0",
-    "description": "",
+    "date": "13.11.2021",
+    "description": "Rsschool, Node.js, task 1 (my_ciphering_cli_tool)",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
